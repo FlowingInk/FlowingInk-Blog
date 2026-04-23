@@ -26,10 +26,10 @@ export default function TopNavigationBar(props: Props) {
 									<a
 										key={item.label}
 										href={item.href}
-										className="flex w-19 items-center justify-center rounded-none text-[14px] font-light tracking-wide
+										className="flex w-19 items-center justify-center rounded-none text-sm font-semibold tracking-widest
 										text-primary transition-all duration-200
 										hover:text-primary/60
-										active:text-primary/50 active:scale-[0.98]"
+										active:text-primary/50 active:scale-95"
 									>
 										{item.label}
 									</a>
@@ -55,7 +55,12 @@ export default function TopNavigationBar(props: Props) {
 								/>
 							</div>
 							<div className="absolute left-1/2 -translate-x-1/2 text-primary ">
-								<h1 style={{ fontFamily: 'Great Vibes' }}>FlowingInk's Blog</h1>
+								<h1
+									className="font-semibold tracking-wide"
+									style={{ fontFamily: 'Great Vibes' }}
+								>
+									FlowingInk's Blog
+								</h1>
 							</div>
 							<div className="flex flex-row gap-4">
 								<Button

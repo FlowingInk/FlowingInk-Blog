@@ -1,5 +1,5 @@
 import { Button, Dialog, DialogPanel, Transition, TransitionChild } from '@headlessui/react';
-import { GithubLogoIcon } from '@phosphor-icons/react';
+import { GithubLogoIcon } from '@phosphor-icons/react/dist/ssr';
 import type { NavigationItem } from './navigationItems';
 
 type MobileNavigationSidebarProps = {
@@ -49,23 +49,18 @@ export default function MobileNavigationSidebar({
 											className="h-10 w-10 rounded-full border-2 border-primary object-cover"
 										/>
 										<div>
-											<div className="text-sm font-semibold tracking-wide text-primary">
+											<div className="text-sm font-bold tracking-widest text-primary">
 												流光墨佰
 											</div>
 											<div className="flex gap-2.5 text-xs text-primary/65">
-												<Button
-													type="button"
-													className="flex size-4 items-center justify-center rounded-full border border-primary/15 bg-primary/6 text-primary shadow-sm transition-all duration-200 hover:bg-primary/12 hover:shadow active:scale-95 active:bg-primary/18"
-												>
-													<GithubLogoIcon size={16} />
-												</Button>
+												FlowingInk's Blog
 											</div>
 										</div>
 									</div>
 									<Button
 										type="button"
 										onClick={onClose}
-										className="flex h-9 w-9 items-center justify-center rounded-full text-2xl text-primary transition-all active:scale-95 active:bg-primary/15"
+										className="flex size-9 items-center justify-center rounded-full text-2xl text-primary transition-all active:scale-95 active:bg-primary/15"
 									>
 										<span aria-hidden="true">×</span>
 									</Button>
@@ -78,13 +73,24 @@ export default function MobileNavigationSidebar({
 												key={item.label}
 												href={item.href}
 												onClick={onClose}
-												className="flex items-center justify-between rounded-2xl px-4 py-3 text-base font-medium text-primary transition-colors duration-200 hover:bg-primary/8 active:bg-primary/12"
+												className="flex items-center justify-between rounded-2xl px-4 py-3 text-base font-semibold tracking-wider text-primary transition-colors duration-200 hover:bg-primary/8 active:bg-primary/12"
 											>
 												<span>{item.label}</span>
 												<span className="text-primary/35">/</span>
 											</a>
 										);
 									})}
+								</div>
+
+								<div className="mt-auto pt-6">
+									<a href="https://github.com/FlowingInk">
+										<Button
+											type="button"
+											className="inline-flex  h-10 items-center gap-2 rounded-2xl border border-primary/10 bg-white/70 px-4 text-sm font-medium text-primary shadow-sm transition-all duration-100 active:scale-98 active:bg-primary/20"
+										>
+											<GithubLogoIcon size={16} weight="fill" />
+										</Button>
+									</a>
 								</div>
 							</DialogPanel>
 						</TransitionChild>
