@@ -1,0 +1,25 @@
+version: '3'
+
+tasks:
+  api:dev:
+    desc: Run the Go API in watch mode with Air
+    dir: apps/api
+    cmds:
+      - air
+
+  api:run:
+    desc: Run the Go API once without Air
+    dir: apps/api
+    cmds:
+      - go run ./cmd/server
+
+  api:tidy:
+    desc: Tidy Go module dependencies
+    dir: apps/api
+    cmds:
+      - go mod tidy
+
+  dev:
+    desc: Alias for api:dev
+    cmds:
+      - task api:dev

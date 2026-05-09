@@ -7,10 +7,15 @@
 	},
 	"files": {
 		"includes": [
-			"**/src/**/*",
+			"apps/**/src/**/*",
 			"**/.vscode/**/*",
-			"**/index.html",
-			"**/vite.config.ts",
+			"apps/**/index.html",
+			"apps/**/package.json",
+			"apps/**/tsconfig.json",
+			"apps/**/vite.config.ts",
+			"package.json",
+			"turbo.json",
+			"pnpm-workspace.yaml",
 			"!**/src/routeTree.gen.ts",
 			"!**/src/styles.css"
 		]

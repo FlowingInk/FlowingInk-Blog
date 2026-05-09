@@ -4,6 +4,7 @@ dist
 dist-ssr
 *.local
 .env
+.turbo
 .nitro
 .tanstack
 .wrangler
@@ -11,3 +12,8 @@ dist-ssr
 .vinxi
 __unconfig*
 todos.json
+.env
+.env.*
+**/.env
+**/.env.*
+.claude
