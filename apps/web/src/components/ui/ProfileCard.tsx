@@ -31,13 +31,13 @@ export default function ProfileCard({
 	githubUrl = 'https://github.com/FlowingInk'
 }: ProfileCardProps) {
 	const { data } = useProfile('1');
-	const postCount = data?.data?.postCount ?? 0;
-	const categoryCount = data?.data?.categoryCount ?? 0;
-	const tagCount = data?.data?.tagCount ?? 0;
+	const postCount = data?.postCount ?? 0;
+	const categoryCount = data?.categoryCount ?? 0;
+	const tagCount = data?.tagCount ?? 0;
 
 	return (
 		<Fade enter="transition-opacity duration-700" as="div">
-			<div className="w-full max-w-100 rounded-3xl border border-white/50 bg-white/85 p-7 shadow-[0_20px_50px_rgba(255,130,140,0.18)] backdrop-blur-md">
+			<div className="w-full max-w-100 rounded-3xl border border-white/50 bg-white/85 p-7 shadow-[0_20px_50px_var(--shadow-color)] backdrop-blur-md">
 				<div className="flex items-center justify-center gap-3">
 					<img
 						alt={'avatar'}

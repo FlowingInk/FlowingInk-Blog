@@ -2,6 +2,7 @@ import { Button } from '@headlessui/react';
 import { DotsThreeOutlineVerticalIcon, MagnifyingGlassIcon } from '@phosphor-icons/react';
 import { type ReactElement, useState } from 'react';
 import HideOnScroll from '../behavior/HideOnScroll';
+import ThemeToggleButton from '../ui/ThemeToggleButton';
 import MobileNavigationSidebar from './MobileNavigationSidebar';
 import NavigationSearchDialog from './NavigationSearchDialog';
 import { navItems } from './navigationItems';
@@ -36,7 +37,8 @@ export default function TopNavigationBar(props: Props) {
 								);
 							})}
 						</div>
-						<div className="absolute right-4 hidden md:flex">
+						<div className="absolute right-4 hidden md:flex md:items-center md:gap-2">
+							<ThemeToggleButton />
 							<Button
 								type="button"
 								onClick={() => setIsSearchOpen(true)}
@@ -60,6 +62,7 @@ export default function TopNavigationBar(props: Props) {
 								</h1>
 							</div>
 							<div className="flex flex-row gap-4">
+								<ThemeToggleButton />
 								<Button
 									type="button"
 									onClick={() => setIsSearchOpen(true)}

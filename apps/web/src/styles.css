@@ -4,13 +4,17 @@
   --color-primary: var(--primary);
 }
 
-/* 默认 Bochi Theme*/
+/* Bochi 粉色主题 (默认) */
 :root {
   --primary: rgb(255 130 140);
+  --shadow-color: rgb(255 130 140 / 0.18);
 }
 
-
-
+/* 蓝色主题 */
+html.theme-whiteAlbum {
+  --primary: rgb(70 120 180);
+  --shadow-color: rgb(70 120 180 / 0.18);
+}
 
 * {
   box-sizing: border-box;

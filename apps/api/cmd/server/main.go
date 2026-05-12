@@ -5,7 +5,10 @@ import (
 
 	"FlowingInk-Blog/internal/bootstrap"
 	"FlowingInk-Blog/internal/config"
+	"FlowingInk-Blog/internal/post"
 	"FlowingInk-Blog/internal/profile"
+	"FlowingInk-Blog/jwt"
+	"FlowingInk-Blog/user"
 
 	"github.com/gin-gonic/gin"
 )
@@ -13,22 +16,28 @@ import (
 func main() {
 	log.Println("App is starting.....")
 
-	appCfg := config.Load()
+	cfg := config.Load()
 
-	db, err := bootstrap.NewDB(appCfg.DB)
+	jwtManager := jwt.NewJWTManager(jwt.WithAccessSecret(cfg.Jwt.AccessSecret),
+		jwt.WithRefreshSecret(cfg.Jwt.RefreshSecret),
+		jwt.WithAccessExpire(cfg.Jwt.AccessExpire),
+		jwt.WithRefreshExpire(cfg.Jwt.RefreshExpire),
+		jwt.WithIssuer(cfg.Jwt.Issuer),
+	)
+
+	db, err := bootstrap.NewDB(cfg.DB)
 	if err != nil {
 		log.Fatalf("init db failed: %v", err)
 	}
 
-	authorRepo := profile.NewAuthorRepo(db)
-	profileSvc := profile.NewProfileService(authorRepo)
-	profileHandler := profile.NewProfileHandler(profileSvc)
-
 	router := gin.Default()
-	router.POST("/api/profile", profileHandler.GetProfileInfo)
 
-	log.Printf("Server is running on :%s\n", appCfg.Port)
-	if err := router.Run(":" + appCfg.Port); err != nil {
+	profile.RegisterRoutes(router, db)
+	post.RegisterRoutes(router, db)
+	user.RegisterRoutes(router, db, jwtManager)
+
+	log.Printf("Server is running on :%s\n", cfg.Port)
+	if err := router.Run(":" + cfg.Port); err != nil {
 		log.Fatalf("server start failed: %v", err)
 	}
 }

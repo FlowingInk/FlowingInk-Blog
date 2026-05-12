@@ -19,8 +19,8 @@ type DBConfig struct {
 
 func loadDBConfig() DBConfig {
 	godotenv.Load()
-	dsn := os.Getenv("DB_DSN")
-
+	dsn := os.Getenv("DATABASE_URL")
+	println(dsn)
 	cfg := DBConfig{DSN: dsn}
 	if dsn == "" {
 		return cfg
