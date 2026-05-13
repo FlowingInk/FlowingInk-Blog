@@ -7,7 +7,7 @@ import (
 	"FlowingInk-Blog/internal/config"
 	"FlowingInk-Blog/internal/post"
 	"FlowingInk-Blog/internal/profile"
-	"FlowingInk-Blog/jwt"
+	"FlowingInk-Blog/internal/jwt"
 	"FlowingInk-Blog/user"
 
 	"github.com/gin-gonic/gin"
