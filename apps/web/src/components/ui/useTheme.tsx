@@ -15,7 +15,10 @@ function getInitialTheme(): Theme {
 }
 
 function getBackgroundUrl(theme: Theme): string {
-	return theme === 'bochi' ? '/bochi.png' : '/white-album.webp';
+	//TODO 做moblie和pc的判断
+	const mq = window.matchMedia('(min-width: 768px)');
+	if (mq.matches) return theme === 'bochi' ? '/bochi-bg-pc.png' : '/white-album-pc.webp';
+	return theme === 'bochi' ? '/bochi-bg-mb.webp' : '/white-album-bg-mb.jpg';
 }
 
 interface ThemeContextValue {

@@ -5,10 +5,10 @@ import (
 
 	"FlowingInk-Blog/internal/bootstrap"
 	"FlowingInk-Blog/internal/config"
+	"FlowingInk-Blog/internal/jwt"
 	"FlowingInk-Blog/internal/post"
 	"FlowingInk-Blog/internal/profile"
-	"FlowingInk-Blog/internal/jwt"
-	"FlowingInk-Blog/user"
+	"FlowingInk-Blog/internal/user"
 
 	"github.com/gin-gonic/gin"
 )

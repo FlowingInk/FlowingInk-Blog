@@ -37,8 +37,10 @@ export default function TopNavigationBar(props: Props) {
 								);
 							})}
 						</div>
-						<div className="absolute right-4 hidden md:flex md:items-center md:gap-2">
-							<ThemeToggleButton />
+						<div className="absolute right-4 hidden md:flex md:items-center md:gap-5">
+							<div className="hidden md:flex">
+								<ThemeToggleButton />
+							</div>
 							<Button
 								type="button"
 								onClick={() => setIsSearchOpen(true)}
@@ -48,6 +50,7 @@ export default function TopNavigationBar(props: Props) {
 								<span>搜索</span>
 							</Button>
 						</div>
+						{/* moblie端ui */}
 						<div className="flex w-full items-center justify-between p-2 md:hidden">
 							<div>
 								<img
@@ -57,12 +60,14 @@ export default function TopNavigationBar(props: Props) {
 								/>
 							</div>
 							<div className="absolute left-1/2 -translate-x-1/2 text-primary ">
-								<h1 className="font-semibold tracking-wide" style={{ fontFamily: 'Great Vibes' }}>
+								<h1
+									className="font-semibold tracking-wide"
+									style={{ fontFamily: 'Great Vibes' }}
+								>
 									FlowingInk's Blog
 								</h1>
 							</div>
 							<div className="flex flex-row gap-4">
-								<ThemeToggleButton />
 								<Button
 									type="button"
 									onClick={() => setIsSearchOpen(true)}

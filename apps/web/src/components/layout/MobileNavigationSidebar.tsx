@@ -1,5 +1,6 @@
 import { Button, Dialog, DialogPanel, Transition, TransitionChild } from '@headlessui/react';
 import { GithubLogoIcon } from '@phosphor-icons/react/dist/ssr';
+import ThemeToggleButton from '../ui/ThemeToggleButton';
 import type { NavigationItem } from './navigationItems';
 
 type MobileNavigationSidebarProps = {
@@ -81,8 +82,8 @@ export default function MobileNavigationSidebar({
 										);
 									})}
 								</div>
-
-								<div className="mt-auto pt-6">
+								<div className="flex flex-row gap-2 items-center mt-auto pt-6">
+									<ThemeToggleButton />
 									<a href="https://github.com/FlowingInk">
 										<Button
 											type="button"

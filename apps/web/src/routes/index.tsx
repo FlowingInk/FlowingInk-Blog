@@ -20,7 +20,9 @@ function Home() {
 			/>
 			<TopNavigationBar />
 			<GradientBlurImage imageUrl={backgroundUrl}>
-				<HeroTitleOverlay />
+				<div className="hidden md:block">
+					<HeroTitleOverlay />
+				</div>
 			</GradientBlurImage>
 			<div className="relative z-10 mx-auto max-w-380 -mt-24 flex flex-col items-start gap-20 px-6 md:flex-row lg:px-10">
 				<div className="w-full shrink-0 md:w-auto hidden md:flex">
