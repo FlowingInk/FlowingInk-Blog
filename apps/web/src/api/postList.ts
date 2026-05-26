@@ -10,7 +10,7 @@ export interface PostItem {
 }
 
 export interface PostListResponse {
-	postItem: PostItem[];
+	data: PostItem[];
 	total: number;
 	page: number;
 	pageSize: number;

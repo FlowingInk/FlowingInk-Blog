@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import Fade from './Fade';
+import Fade from '../base/Fade';
 
 export default function GradientBlurImage({
 	imageUrl,

@@ -2,7 +2,7 @@ import { Button } from '@headlessui/react';
 import { DotsThreeOutlineVerticalIcon, MagnifyingGlassIcon } from '@phosphor-icons/react';
 import { type ReactElement, useState } from 'react';
 import HideOnScroll from '../behavior/HideOnScroll';
-import ThemeToggleButton from '../ui/ThemeToggleButton';
+import ThemeToggleButton from '../ui/base/ThemeToggleButton';
 import MobileNavigationSidebar from './MobileNavigationSidebar';
 import NavigationSearchDialog from './NavigationSearchDialog';
 import { navItems } from './navigationItems';

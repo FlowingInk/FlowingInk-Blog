@@ -1,4 +1,4 @@
-import Fade from './Fade';
+import Fade from '../base/Fade';
 
 type HeroTitleOverlayProps = {
 	title?: string;

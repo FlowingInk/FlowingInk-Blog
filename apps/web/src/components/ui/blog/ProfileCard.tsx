@@ -1,6 +1,6 @@
 import { GithubLogoIcon } from '@phosphor-icons/react/dist/ssr';
 import { useProfile } from '#/hooks/useProfile';
-import Fade from './Fade';
+import Fade from '../base/Fade';
 
 type ProfileCardProps = {
 	avatarUrl?: string;

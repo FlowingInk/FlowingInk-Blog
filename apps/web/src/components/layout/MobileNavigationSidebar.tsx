@@ -1,6 +1,6 @@
 import { Button, Dialog, DialogPanel, Transition, TransitionChild } from '@headlessui/react';
 import { GithubLogoIcon } from '@phosphor-icons/react/dist/ssr';
-import ThemeToggleButton from '../ui/ThemeToggleButton';
+import ThemeToggleButton from '../ui/base/ThemeToggleButton';
 import type { NavigationItem } from './navigationItems';
 
 type MobileNavigationSidebarProps = {
